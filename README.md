@@ -121,11 +121,8 @@ All tools operate on **field labels only**, ensuring safe UI interaction.
 ## Demo Video
 
 ```
-Place your demo video here:
-demo/nano_sugar_demo.mp4
+![Demo of Nano Sugar Assistant](./demo/nano_sugar_demo.gif)
 ```
-
-You can embed it in GitHub by committing an `.mp4`.
 
 ---
 
