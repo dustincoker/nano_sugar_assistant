@@ -120,9 +120,9 @@ All tools operate on **field labels only**, ensuring safe UI interaction.
 
 ## Demo Video
 
-```
-![Demo of Nano Sugar Assistant](./demo/nano_sugar_demo.gif)
-```
+
+![Demo of Nano Sugar Assistant](./demo/nano_sugar_assistant_demo.gif)
+
 
 ---
 
