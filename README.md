@@ -147,7 +147,8 @@ All tools operate on **field labels only**, ensuring safe UI interaction.
 
 ## License
 
-MIT License — see `LICENSE`.
+This customization is shared for educational and portfolio purposes.
+Please adapt and extend it responsibly within your SugarCRM environment.
 
 ---
 
