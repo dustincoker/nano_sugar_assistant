@@ -36,7 +36,6 @@ What is the account type and status?
 ```
 Highlight the billing address field in yellow.
 Flash the status field.
-Scroll to the email address field.
 ```
 
 ---
@@ -48,8 +47,7 @@ nano_sugar_assistant/
 ├─ src/
 │  └─ nano_sugar_assistant.js   # main script (paste into console)
 ├─ demo/
-│  └─ nano_sugar_demo.mp4       # optional demo video
-├─ screenshots/                 # optional images for README
+│  └─ nano_sugar_assistant_demo.gif       # optional demo                 
 ├─ LICENSE
 └─ README.md
 ```
@@ -142,10 +140,8 @@ All tools operate on **field labels only**, ensuring safe UI interaction.
 ## Roadmap (Optional)
 
 * Add support for subpanel scanning  
-* Add conversation memory  
 * Add UI commands (collapse panels, scroll to subpanels)  
 * Convert into a Chrome extension  
-* Bookmarklet version
 
 ---
 
