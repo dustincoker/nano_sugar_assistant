@@ -92,9 +92,9 @@ All tools operate on **field labels only**, ensuring safe UI interaction.
    Creates a draggable, resizable chat panel injected into the DOM.
 
 3. **Gemini Nano Session**  
-   Uses Chrome’s `window.ai` API:
+   Uses Chrome’s on-device Prompt API:
    ```js
-   const session = await ai.languageModel.create();
+   const session = await LanguageModel.create();
    ```
 
 4. **Two Execution Paths**  

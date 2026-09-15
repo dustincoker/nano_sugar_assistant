@@ -211,7 +211,6 @@
     el.classList.add('nano-highlight');
     if (strong) el.classList.add('nano-highlight-strong');
     if (color) {
-      el.style.setProperty('--nano-color', color);
       el.style.outlineColor = color;
       el.style.backgroundColor = hexOrNamedToRgba(color, 0.15) || el.style.backgroundColor;
     }
@@ -229,7 +228,9 @@
   function flashOnce(el, ms=1800) {
     if (!el) return false;
     el.classList.add('nano-flash-once');
-    setTimeout(() => el.classList.remove('nano-flash-once'), ms);
+    // A flash is meant to be transient, unlike highlightField's persistent
+    // highlight, so clear it fully once the animation finishes.
+    setTimeout(() => removeHighlight(el), ms);
     return true;
   }
 
@@ -291,7 +292,7 @@
       const fieldResolved = resolveField(params.target);
       if (!fieldResolved) return { ok: false, error: `Field not found for '${params.target}'` };
       const el = findFieldNode(fieldResolved);
-      if (!el) return { ok: false, error: `Label node not found for '${fieldResolved}` };
+      if (!el) return { ok: false, error: `Label node not found for '${fieldResolved}'` };
       // ensure highlight so the flash is visible
       applyHighlight(el, params.color, !!params.strong);
       flashOnce(el, Number(params.ms) || 1800);
@@ -304,7 +305,7 @@
       const fieldResolved = resolveField(params.target);
       if (!fieldResolved) return { ok: false, error: `Field not found for '${params.target}'` };
       const el = findFieldNode(fieldResolved);
-      if (!el) return { ok: false, error: `Label node not found for '${fieldResolved}` };
+      if (!el) return { ok: false, error: `Label node not found for '${fieldResolved}'` };
       applyHighlight(el, params.color, !!params.strong);
       startFlashing(el);
       el.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -316,7 +317,7 @@
       const fieldResolved = resolveField(params.target);
       if (!fieldResolved) return { ok: false, error: `Field not found for '${params.target}'` };
       const el = findFieldNode(fieldResolved);
-      if (!el) return { ok: false, error: `Label node not found for '${fieldResolved}` };
+      if (!el) return { ok: false, error: `Label node not found for '${fieldResolved}'` };
       stopFlashing(el);
       return { ok: true, field: fieldResolved };
     },
